@@ -16,8 +16,8 @@ const Search = () => {
     return state.editSearch.showLocationOption;
   });
   const show = state
-    ? "bg-white fixed top-0 left-0 right-0 h-[80%] transition-all duration-500 drop-shadow-md p-6"
-    : "bg-white fixed top-0 left-0 right-0 h-[0%] overflow-hidden transition-all duration-500 drop-shadow-md";
+    ? "bg-white fixed top-0 left-0 right-0 h-[80%] drop-shadow-md p-6"
+    : "bg-white fixed top-0 left-0 right-0 h-[0%] overflow-hidden drop-shadow-md";
   return (
     <div className={show}>
       <Title />
