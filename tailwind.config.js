@@ -13,6 +13,9 @@ export default {
 
         // ICON COLORS
         iconSearchColor: "rgba(235, 87, 87, 0.9)",
+
+        // EDIT SEARCH BUTTON COLORS
+        buttonColor: "rgba(235, 87, 87, 0.9)",
       },
     },
   },

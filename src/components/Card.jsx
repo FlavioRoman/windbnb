@@ -1,10 +1,10 @@
-import { stays } from "../utils/stays";
-import { AiFillStar } from "react-icons/ai";
-
 import { motion } from "framer-motion";
+import { AiFillStar } from "react-icons/ai";
 import { container, element } from "../utils/animation";
+import { useSelector } from "react-redux";
 
 const Card = () => {
+  const stays = useSelector((state) => state.stays.data);
   return (
     <motion.article
       initial="hidden"
@@ -12,9 +12,10 @@ const Card = () => {
       variants={container}
       className="md:grid md:gap-x-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
     >
-      {stays.map((item, index) => {
+      {stays?.map((item, index) => {
         return (
           <motion.div
+            key={index}
             variants={element}
             className="w-[100%] max-w-[395px] m-auto"
           >
@@ -26,7 +27,11 @@ const Card = () => {
             <ul id={index} className="w-[100%]">
               <li className="flex items-center justify-between">
                 <div className="flex items-center gap-x-2 mt-2">
-                  <span>SUPER HOST</span>
+                  {item.superHost && (
+                    <span className="border-[1px] border-titleColor rounded-full px-[10px]">
+                      SUPER HOST
+                    </span>
+                  )}
                   <p className="text-cardTypeColor">
                     {item.type} . {item.beds} beds
                   </p>

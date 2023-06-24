@@ -1,5 +1,4 @@
 import { Logo } from "../icons/Icons";
-
 import { motion } from "framer-motion";
 
 const Loading = () => {
